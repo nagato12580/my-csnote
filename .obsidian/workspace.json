@@ -1,0 +1,216 @@
+{
+  "main": {
+    "id": "d2808f09b2fee775",
+    "type": "split",
+    "children": [
+      {
+        "id": "27bf3cdea2665561",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "837045b969a8d437",
+            "type": "leaf",
+            "state": {
+              "type": "memos_view",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "10a9e9fe6444d134",
+    "type": "split",
+    "children": [
+      {
+        "id": "13b8366f33786614",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1f349eb32f6576f9",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "281b52a7a079affe",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "185e0533b33dd7b2",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "606065040a15687c",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "0a455d03560cba30",
+    "type": "split",
+    "children": [
+      {
+        "id": "7e596126beb32cb4",
+        "type": "tabs",
+        "dimension": 71.48058252427184,
+        "children": [
+          {
+            "id": "ee716df3d964ab78",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          },
+          {
+            "id": "bb26e05d231c33b0",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "31934343ed8668f2",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "6c467ef84b1e548b",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "301c0fe172243f67",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": false
+              }
+            }
+          },
+          {
+            "id": "b3067ab8c8e976c7",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "7c5738f429fd1a93",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {}
+            }
+          },
+          {
+            "id": "a83a492e79173f59",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 5
+      },
+      {
+        "id": "6dd81771d139de8e",
+        "type": "tabs",
+        "dimension": 28.519417475728154,
+        "children": [
+          {
+            "id": "5c72b2632107b410",
+            "type": "leaf",
+            "state": {
+              "type": "timeline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "templater-obsidian:Templater": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "obsidian-excalidraw-plugin:新建 Excalidraw 绘图": false,
+      "obsidian-memos:Memos": false,
+      "obsidian-spaced-repetition:复习卡片": false,
+      "obsidian-projects:Open projects": false
+    }
+  },
+  "active": "837045b969a8d437",
+  "lastOpenFiles": [
+    "技术笔记/CPP.md",
+    "技术笔记/CSAPP.md",
+    "T_Box/未命名 1.canvas",
+    "Excalidraw/Drawing 2023-01-26 23.23.06.excalidraw.md",
+    "Diary/20230126_4.md",
+    "技术笔记/CPP2.md",
+    "T_Box/未命名.canvas",
+    "Diary/20221227_2.md",
+    "408/数据结构/未命名.md",
+    "Excalidraw/Drawing 2023-01-21 13.17.44.excalidraw.md"
+  ]
+}

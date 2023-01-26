@@ -1,0 +1,11 @@
+{
+  "promptDelete": false,
+  "attachmentFolderPath": "T_Box/附件",
+  "showLineNumber": true,
+  "showIndentGuide": true,
+  "alwaysUpdateLinks": true,
+  "newLinkFormat": "shortest",
+  "newFileLocation": "folder",
+  "newFileFolderPath": "T_Box",
+  "trashOption": "local"
+}

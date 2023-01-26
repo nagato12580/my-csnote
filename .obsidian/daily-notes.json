@@ -1,0 +1,6 @@
+{
+  "folder": "Diary",
+  "autorun": false,
+  "template": "Template/每日计划模板",
+  "format": "YYYYMMDD_d"
+}

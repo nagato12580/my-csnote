@@ -19,12 +19,9 @@
             "id": "ce1e95a59ad506b6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "kanban",
               "state": {
-                "file": "技术笔记/CPP2.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
+                "file": "技术笔记/未命名看板.md"
               }
             }
           }
@@ -104,7 +101,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技术笔记/CPP2.md"
+                "file": "技术笔记/未命名看板.md"
               }
             }
           },
@@ -114,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技术笔记/CPP2.md",
+                "file": "技术笔记/未命名看板.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -131,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技术笔记/CPP2.md",
+                "file": "技术笔记/未命名看板.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -220,15 +217,15 @@
   },
   "active": "ce1e95a59ad506b6",
   "lastOpenFiles": [
+    "技术笔记/计网.md",
+    "技术笔记/CPP2.md",
     "Diary/20230127_5.md",
     "技术笔记/CPP.md",
     "技术笔记/CSAPP.md",
     "T_Box/未命名 1.canvas",
     "Excalidraw/Drawing 2023-01-26 23.23.06.excalidraw.md",
     "Diary/20230126_4.md",
-    "技术笔记/CPP2.md",
     "T_Box/未命名.canvas",
-    "Diary/20221227_2.md",
-    "408/数据结构/未命名.md"
+    "Diary/20221227_2.md"
   ]
 }

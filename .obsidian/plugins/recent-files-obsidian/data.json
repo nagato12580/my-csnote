@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "未命名看板",
+      "path": "技术笔记/未命名看板.md"
+    },
+    {
+      "basename": "计网",
+      "path": "技术笔记/计网.md"
+    },
+    {
       "basename": "CPP2",
       "path": "技术笔记/CPP2.md"
     },
@@ -119,10 +127,6 @@
     {
       "basename": "2022-12-06",
       "path": "Diary/2022-12-06.md"
-    },
-    {
-      "basename": "计网",
-      "path": "技术笔记/计网.md"
     },
     {
       "basename": "算法",

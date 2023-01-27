@@ -1,8 +1,16 @@
 {
   "recentFiles": [
     {
-      "basename": "未命名看板",
-      "path": "技术笔记/未命名看板.md"
+      "basename": "code",
+      "path": "技术笔记/code.md"
+    },
+    {
+      "basename": "CPP",
+      "path": "技术笔记/CPP/CPP.md"
+    },
+    {
+      "basename": "未命名",
+      "path": "技术笔记/未命名.md"
     },
     {
       "basename": "计网",
@@ -10,23 +18,15 @@
     },
     {
       "basename": "CPP2",
-      "path": "技术笔记/CPP2.md"
+      "path": "技术笔记/CPP/CPP2.md"
     },
     {
       "basename": "20230127_5",
-      "path": "Diary/20230127_5.md"
-    },
-    {
-      "basename": "CPP",
-      "path": "技术笔记/CPP.md"
+      "path": "Schedule/Diary 1/20230127_5.md"
     },
     {
       "basename": "CSAPP",
       "path": "技术笔记/CSAPP.md"
-    },
-    {
-      "basename": "未命名 1",
-      "path": "T_Box/未命名 1.canvas"
     },
     {
       "basename": "Drawing 2023-01-26 23.23.06.excalidraw",
@@ -35,10 +35,6 @@
     {
       "basename": "20230126_4",
       "path": "Diary/20230126_4.md"
-    },
-    {
-      "basename": "未命名",
-      "path": "T_Box/未命名.canvas"
     },
     {
       "basename": "20221227_2",
@@ -51,10 +47,6 @@
     {
       "basename": "Drawing 2023-01-21 13.17.44.excalidraw",
       "path": "Excalidraw/Drawing 2023-01-21 13.17.44.excalidraw.md"
-    },
-    {
-      "basename": "[",
-      "path": "T_Box/[.md"
     },
     {
       "basename": "Pasted image 20230114225953",
@@ -70,7 +62,7 @@
     },
     {
       "basename": "每一天梦想实现",
-      "path": "读书笔记/每一天梦想实现.md"
+      "path": "ReadNote/每一天梦想实现.md"
     },
     {
       "basename": "20230105_4",
@@ -135,10 +127,6 @@
     {
       "basename": "Pasted image 20221211232419",
       "path": "T_Box/附件/Pasted image 20221211232419.png"
-    },
-    {
-      "basename": "code",
-      "path": "技术笔记/code.md"
     },
     {
       "basename": "Pasted image 20221213153113",

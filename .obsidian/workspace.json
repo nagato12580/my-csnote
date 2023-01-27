@@ -19,10 +19,8 @@
             "id": "ce1e95a59ad506b6",
             "type": "leaf",
             "state": {
-              "type": "kanban",
-              "state": {
-                "file": "技术笔记/未命名看板.md"
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ],
@@ -100,9 +98,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "技术笔记/未命名看板.md"
-              }
+              "state": {}
             }
           },
           {
@@ -111,7 +107,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技术笔记/未命名看板.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +123,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技术笔记/未命名看板.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -215,17 +209,17 @@
       "obsidian-memos:Memos": false
     }
   },
-  "active": "ce1e95a59ad506b6",
+  "active": "1f349eb32f6576f9",
   "lastOpenFiles": [
+    "技术笔记/code.md",
+    "技术笔记/CPP/CPP.md",
+    "技术笔记/未命名.md",
+    "技术笔记/未命名看板.md",
     "技术笔记/计网.md",
-    "技术笔记/CPP2.md",
-    "Diary/20230127_5.md",
-    "技术笔记/CPP.md",
+    "技术笔记/CPP/CPP2.md",
+    "Schedule/Diary 1/20230127_5.md",
     "技术笔记/CSAPP.md",
     "T_Box/未命名 1.canvas",
-    "Excalidraw/Drawing 2023-01-26 23.23.06.excalidraw.md",
-    "Diary/20230126_4.md",
-    "T_Box/未命名.canvas",
-    "Diary/20221227_2.md"
+    "Excalidraw/Drawing 2023-01-26 23.23.06.excalidraw.md"
   ]
 }

@@ -8,23 +8,19 @@
         "type": "tabs",
         "children": [
           {
-            "id": "837045b969a8d437",
-            "type": "leaf",
-            "state": {
-              "type": "memos_view",
-              "state": {}
-            }
-          },
-          {
             "id": "ce1e95a59ad506b6",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "技术笔记/CPP/CPP2.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -82,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "0a455d03560cba30",
@@ -98,7 +95,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "技术笔记/CPP/CPP2.md"
+              }
             }
           },
           {
@@ -107,6 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "技术笔记/CPP/CPP2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,6 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "技术笔记/CPP/CPP2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -191,7 +192,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 488.5
+    "width": 408.8
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -211,13 +212,13 @@
   },
   "active": "a83a492e79173f59",
   "lastOpenFiles": [
+    "技术笔记/CPP/CPP.md",
+    "技术笔记/CPP/CPP2.md",
     "T_Box/[.md",
     "技术笔记/code.md",
-    "技术笔记/CPP/CPP.md",
     "技术笔记/未命名.md",
     "技术笔记/未命名看板.md",
     "技术笔记/计网.md",
-    "技术笔记/CPP/CPP2.md",
     "Schedule/Diary 1/20230127_5.md",
     "技术笔记/CSAPP.md",
     "T_Box/未命名 1.canvas"

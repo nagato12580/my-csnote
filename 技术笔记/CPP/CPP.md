@@ -3423,7 +3423,7 @@ public:
 };
 ```
 
-`mutable`关键字：**允许在类内修改某个数据成员**，即使是在一个const成员函数内。
+`mutable`关键字：**允许在类内修改某个数据成员**，即使是在一个const成员函数内。 ^2fec59
 ```c++
 class Person {
 public:

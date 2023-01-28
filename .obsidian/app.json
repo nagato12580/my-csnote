@@ -1,6 +1,6 @@
 {
   "promptDelete": false,
-  "attachmentFolderPath": "T_Box/附件",
+  "attachmentFolderPath": "T_Box/attachment",
   "showLineNumber": true,
   "showIndentGuide": true,
   "alwaysUpdateLinks": true,

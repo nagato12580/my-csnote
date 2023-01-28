@@ -5,6 +5,18 @@
       "path": "技术笔记/CPP/CPP2.md"
     },
     {
+      "basename": "每日计划模板",
+      "path": "Template/每日计划模板.md"
+    },
+    {
+      "basename": "周记模板",
+      "path": "Template/周记模板.md"
+    },
+    {
+      "basename": "hexo模板",
+      "path": "Template/hexo模板.md"
+    },
+    {
       "basename": "code",
       "path": "技术笔记/code.md"
     },
@@ -50,7 +62,7 @@
     },
     {
       "basename": "Pasted image 20230114225953",
-      "path": "T_Box/附件/Pasted image 20230114225953.png"
+      "path": "T_Box/attachment/Pasted image 20230114225953.png"
     },
     {
       "basename": "计算机组成原理",
@@ -74,27 +86,15 @@
     },
     {
       "basename": "Pasted image 20221220211348",
-      "path": "T_Box/附件/Pasted image 20221220211348.png"
+      "path": "T_Box/attachment/Pasted image 20221220211348.png"
     },
     {
       "basename": "2022-12-05",
       "path": "Diary/2022-12-05.md"
     },
     {
-      "basename": "周记模板",
-      "path": "Template/周记模板.md"
-    },
-    {
       "basename": "2022年-第52周",
       "path": "Week/2022年-第52周.md"
-    },
-    {
-      "basename": "每日计划模板",
-      "path": "Template/每日计划模板.md"
-    },
-    {
-      "basename": "hexo模板",
-      "path": "Template/hexo模板.md"
     },
     {
       "basename": "20221223_5",
@@ -126,15 +126,15 @@
     },
     {
       "basename": "Pasted image 20221211232419",
-      "path": "T_Box/附件/Pasted image 20221211232419.png"
+      "path": "T_Box/attachment/Pasted image 20221211232419.png"
     },
     {
       "basename": "Pasted image 20221213153113",
-      "path": "T_Box/附件/Pasted image 20221213153113.png"
+      "path": "T_Box/attachment/Pasted image 20221213153113.png"
     },
     {
       "basename": "Pasted image 20221211233116",
-      "path": "T_Box/附件/Pasted image 20221211233116.png"
+      "path": "T_Box/attachment/Pasted image 20221211233116.png"
     }
   ],
   "omittedPaths": [],

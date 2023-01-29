@@ -1148,3 +1148,289 @@ while(map_it!=word_count.cend()){
 - 在实际编程中，如果我们真要对一个关联容器使用算法，要么是将它当作一个源序列，要么当作一个目的位置。例如，可以用泛型`copy`算法将元素从一个关联容器拷贝到另一个序列。
 
 ### 11.3.2 添加元素
+关联容器的`insert`成员向容器中添加一个元素或一个元素范围。
+由于`map`和`set`包含不重复的关键字，因此插入一个已经存在的元素对容器没有任何影响。
+![[Pasted image 20230129134708.png]]
+
+#### 向map添加元素
+`map`的一个元素的类型是`pair`，插入时，可以在`insert`的参数列表创建一个`pair`。
+```c++
+word_count.insert((word,1));
+//调用make_pair显示构造
+word_count.insert(make_pair(word,1));
+word_count.insert(pair<string,size_t>(word,1));
+//构造一个恰当的pair类型，并构造该类型的一个新对象，插入到map中。
+word_count.insert(map<string,size_t>::value(word,1));
+```
+
+#### 检测insert的返回值
+- `insert`的返回值：`insert`（或`emplace`)返回的值依赖于**容器类型**和**参数**。
+
+- 添加单一元素的`insert`和`emplace`的返回值：返回一个`pair`，包含两个成员`first`和`second`。
+	- `first`成员：是一个迭代器，指向具有给定关键字的元素。
+	- `second`成员：是一个`bool`值，指出元素是否成功插入还是已存在。
+		- `true`：元素被插入
+		- `false`：元素已存在，该操作说明也不做。
+![[Pasted image 20230129135249.png]]
+>`if`语句检查返回值的`bool`部分，若为`false`，则表明插入操作未发生。在此情况下，`word`己存在于`word_count`中，因此必须递增此元素所关联的计数器。
+
+#### 展开递增语句
+```c++
+//下面两个语句等价
+++ret.first->second;
+++((ret.first)->second);
+```
+- `ret`：保存`insert`返回的值，是一个`pair`
+- `ret.first`：是一个`map`迭代器，指向具有给定关腱字的元素。
+- `(ret.first)->second`：`map`中元素的值部分。
+- `++ret.first->second`：递增`map`中元素的值。
+
+#### 向multiset或multimap添加元素
+- `multimap`：一个关键字有多个值。关键字不必唯一
+```c++
+multimap<string,string> authors;
+authors.insert({"hello","C++"});
+authors.insert({"hello","world"});//关键字也是“hello”
+```
+
+- 对**允许重复关键字的容器**，接受**单个元素**的`insert`操作**返回**一个指向新元素的**迭代器**。因为insert总是向这类容器中添加元素。
+
+
+### 删除元素
+关键容器定义了三个版本的`erase`来删除容器。
+- 第一个版本：参数是一个迭代器，用于删除一个元素。指定元素被删除返回`void`
+- 第二个版本：参数是一对迭代器，用于删除一对元素。指定元素被删除返回`void`
+- 第三个版本：接受一个`key_type`参数，用于删除所有匹配给定关键字的元素，
+	- 如果元素存在返回实际删除元素的数量。
+	- 如果元素不存在，返回0
+```c++
+word_count.erase(removal_word)
+```
+![[Pasted image 20230129141400.png]]
+
+
+### 11.3.4 map的下标操作
+- `map`和`unordered_map`容器提供了下标运算符和一个对应的[[CPP#访问元素|at函数]]。
+![[Pasted image 20230129141939.png]]
+>[!note]
+>ma下标运算符接受一个索引，**如果关键字不存在，将会为它创建一个元素并插入到`map`中，关联值将进行值初始化。** 如果不希望添加新元素只想查找，应该使用`find`，不能使用下标。
+```c++
+map<string,size_t> word_count;
+//插入一个关鍵字为Anna的元素，关联值进行值初始化；然后将1赋予它
+word_count["Anna"]=1
+```
+- 在`word_count`中搜索关键字为`Anna`的元素，未找到。将一个新的关键字一值对插入到`word_count`中。关腱字是一个`const string`
+- 保存`Anna`值进行值初始化，向初始化为0；
+- 提取出新插入的元素，并将值1赋予它。
+
+对于**其他关联容器**：
+- `set`类型不支持下标，因为`set`中没有与关键字相关联的“值”，`set`中保存的元素本身就是关键字。
+- 不能对一个`multimap`或一个`unordered_multimap`进行下标操作，因为这两个容器中一个关键字对应着多个值。
+
+#### 使用下标操作的返回值
+- 对于`map`对象：
+	- 进行下标操作，获取一个`mapped_type`对象,返回[[CPP#左值和右值|左值]]，可以进行读写操作。
+	- 解引用一个`map`迭代器：一个`value_type`对象.
+```c++
+++word_count["Anna"];//提取元素，然后增1
+```
+
+>[!warning]
+>与`vector`与`string`不同，`map`的下标运算符返回的类型与解引用`map`迭代器得到的类型不同。
+
+
+### 11.3.5 访问元素
+- `find`函数：用于不允许重复的容器时和`count`效果类似。如果不需要计数，最好使用`find`.
+	- 元素存在，返回指向该元素的迭代器
+	- 元素不存在，返回指向该容器的尾后迭代器
+- `count`函数：用于不允许重复的容器时和`find`效果类似。对于允许重复关键字的容器：`count`还会统计有多少个元素相同的关键字。
+	- 元素存在，返回该元素的数量
+	- 元素不存在，返回0
+
+```c++
+set<int> iset = {0,1,2,3};
+iset.find(1);//找到。返回一个迭代器，指向key==1的元素。
+iset.find(11);//找不到。返回指向iset.end()的迭代器
+
+iset.count(1);//，找到，返回1
+iset.count(1);//找不到，返回0
+```
+![[Pasted image 20230129144518.png]]
+![[Pasted image 20230129144525.png]]
+
+#### 对map使用find代替下标操作
+
+**好处：** 只查找元素是否存在，不改变`map`
+```c++
+if(word_count.find("Anna")==word_count.end()){
+	cout<<"Anna is not in the map"<<endl;
+}
+```
+
+#### 在multimap或multiset中查找元素
+如果一个`multimap`或`multiset`中有**多个元素**具有给定关键字，则这些元素在容器中会**相邻存储**。
+```c++
+//利用该性质打印同一作者的所有图书
+string search_item("Alain de Botton");//要查找的作者
+auto count = author.count(search_item);
+auto iter  =author.find(search_item);//此作者的第一本书
+while(count){
+	cout<<iter->second<<endl;
+	++iter;
+	--entries;
+}
+```
+
+#### 一种不同的，面向迭代器的解决方法
+- `lower_bound`：如果元素存在，返回的迭代器将指向第一个具有给定关键字的元素。
+- `upper_bound`：如果元素存在，返回的迭代器则指向最后一个匹配给定关键字的元素之后的位置。
+如果元素不存在，则返回以上两个函数会返回相等的迭代器，指向一个不影响排序的关键字插入位置。
+因此，用相同的关键字调用`lower_bound`和`upper_bound`会得到一个迭代器范围。
+
+```c++
+//打印同一作者的所有图书
+string search_item("Alain de Botton");//要查找的作者
+
+auto iter  =author.find(search_item);//此作者的第
+for(auto beg = author.lower_bound(search_item),end=author.upper_bound(search_item);beg!=end;++beg;)
+	cout<<beg->second<<endl;//打印每本图书
+```
+如果**没有**元素与给定关键字匹配，则`lower_bound`和`upper_bound`**会返回相等的迭代器**一一都指向给定关键字的插入点，能保持容器中元素顺序的插入位置。
+
+#### equal_range函数
+- `equal_rang`函数：此函数**接受一个关键字**，返回一个迭代器`pair`，即`pair`中两个元素都是迭代器。
+	- 如果关键字存在：则第一个迭代器指向第一个与关键字匹配的元素。第二个得带起指向最后一个**匹配元素之后的位置**。
+	- 如果关键字不存在，则两个迭代器都指向关键字可以插入的位置。
+```c++
+string search_item("Alain de Botton");//要查找的作者
+
+auto iter  =author.find(search_item);//此作者的第一本书
+for(auto pos = authors.equal_range(search_item);pos.first!pos.second;++pos.first)
+	cout<<pos.first->second<<endl;//打印每个题目
+```
+
+调用`equal_range`返回的迭代器`pair`中的两个迭代器相当于调用`lower_bound`和`upper_bound`返回的迭代器。
+
+
+### 11.3.6 例子：一个单词转换的map
+- **功能：** 将第二个文本文件，按照第一个文件中的规则进行转换。例如u转换成you，pic转换成picture。
+
+- **定义函数：** 
+	- `word_transform`：接受两个`ifstream`参数，读取第一个文件中的转换规则和第二个文件中待转换的文本。
+		- 第一个参数：绑定第一个文件
+		- 第二个参数，绑定第二个文件
+	- `build_Map`：会读取转换规则文件，并创建一个map，用于保存每个单词到其转换内容的映射。
+	- `transform`：接受一个`string`，如果存在转换规则，返回转换后的内容。
+
+```c++
+map<string,string> build_Map(ifstream &rule){
+	map<string,string> trans_map ;//保存转换规则
+	string key;
+	string value;
+	//这里因为我们假设规则都是由一个单词和一个短语构成，所以利用>>字节读取单词，再利用getline读取这一行中余下的内容
+	while(rule>>key&&getline(rule，value)){
+		if(value.size()>1)
+			//存在转换规则，去掉最前面的空格
+			trans_map[key] = value.substr(1);
+		else
+			throw runtime_error("no rule"+key);
+	return trans_map
+	
+	}
+}
+const &string transform(const string &word,map<string,string> rule){
+	//利用count
+	auto count = rule.count(word);
+	if(count!=0)
+		return map[word];
+	else
+		return word;
+		
+	//利用find
+	auto it = rule.find(word);
+	if(it!=word.cend())
+		return it->second;
+	else
+		return word;
+	
+}
+
+void word_transform(ifstream &rule,&input){
+	auto mrule = build_Map(rule);
+	string text;
+	while(getline(input,text)){//读取文件中的一行保存在text
+		istringstream stream(text);//创建一个流，读取每个string
+		string word;
+		bool firstword = true;
+	while(stream>>word){
+		
+		if(firstword)//使得第一个单词不打印空格
+			firstword = false;
+		else
+			cout<<"";//在单词间打印一个空格
+		cout<<transform(word,trans_map);
+	}
+	cout<<endl;//完成一行的转换
+	}
+}
+
+```
+>函数`substr`参见[[CPP#构造string的其他方法]]
+
+## 11.4 无序容器
+新标准定义了4个**无序关联容器**。`unordered_map`、`unordered_set`
+- **无序关联容器：** 不是使用比较运算符来组织元素，而是使用一个**哈希函数**和关键字类型的`==`运算符。
+- **适用范围**：在关键字类型的元素没有明显的序关系的情况下。
+- **关键字是否可重复**：无序容器也有允许重复关键字的版本。
+
+#### 使用无序容器
+- 一些有序容器的操作也能应用于无序容器，
+使用无序容器读取单词时，不太可能按字典序输出。
+
+#### 管理桶
+- **无序容器在存储上组织为一组桶，每个桶保存零个或多个元素。**
+- 无序容器使用一个哈希函数将元素映射到桶。
+- 访问元素时，容器首先计算元素的哈希值，它指出应该搜索哪个桶。
+- 容器将具有一个特定哈希值的所有元素都保存在相同的桶中。
+- 如果元素允许关键字重复，那么具有相同关键字的元素都会在一个桶中。
+- 无需容器的性能依赖于哈希函数的质量和桶数量和大小。
+
+- **哈希函数：** 对于相同的参数产生同样的结果。理想情况下，哈希函数还能将每个特定的值映射到唯一桶。但是，将不同关键字的元素映射到相同的桶也是允许的。
+- 当**一个桶**保存多个元素时，需要**顺序搜索**这些元素来查找我们想要的那个。当一个桶中保存了很多元素，那么查找一个特定元素就需要大量的比较操作。
+
+- 无序容器管理桶的函数：这些成员函数允许我们查询容器的状态以及在必要时强制容器进行重组。
+![[Pasted image 20230129162852.png]]
+
+#### 无序容器对关键字类型的要求
+- 默认情况下，无序容器使用关键字类型的`==`运算符来比较元素，它们还使用一个`hash<key_type>`类型的对象来**生成每个元素的哈希值**。
+
+- 标准库为内置类型（包括指针）提供了`hash`模板。还为一些标准库类型，包括`string`和智能指针类型定义了`hash`，因此，我们**可以直接定义关键字是内置类型（包括指针类型）、`string`还是智能指针类型的无序容器。**
+
+- 自定义类类型需要我们自己定义`hash`模板以及`==`操作之后才可以使用该类型的无序容器。
+```c++
+//自定义哈希
+size_t hasher(const Sales_data &sd){
+	return hash<string>()(sd.isbn());
+}
+//自定义==
+bool eqOp(const Sales_data &lhs,const Sales_data &rhs){
+	return lhs.isbn()==rhs.isbn();
+}
+
+//定义一个无序可重复的set
+using SD_multiset = unordered_multiset<Salas_data,decltype(hasher)*,decltype(eqOp) *>;
+//参数是桶大小，哈希函数指针和相等性符指针
+	SD_multiset(42,hasher,eqOp);
+```
+>有关函数指针，参见[[CPP#函数指针]]
+
+>[!note]
+>- 有序容器的迭代器通过关键字有序访问容器中的元素。
+>- 无论在**有序容器**中还是在**无序容器**中，具有相同关键字的元素都是**相邻存储**的。
+
+
+
+# C++标准库：动态内存
+
+
+

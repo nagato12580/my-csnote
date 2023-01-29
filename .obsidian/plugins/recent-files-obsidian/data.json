@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "CSAPP",
+      "path": "技术笔记/CSAPP.md"
+    },
+    {
       "basename": "CPP2",
       "path": "技术笔记/CPP/CPP2.md"
     },
@@ -15,10 +19,6 @@
     {
       "basename": "delete",
       "path": "Schedule/Diary/delete.md"
-    },
-    {
-      "basename": "CSAPP",
-      "path": "技术笔记/CSAPP.md"
     },
     {
       "basename": "每日计划模板",

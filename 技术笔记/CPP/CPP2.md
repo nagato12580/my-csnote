@@ -992,5 +992,159 @@ while(cin>>word)
 ## 11.2 关联容器概述
 - 关联容器（有序的和无序的）都支持[[CPP#^fdecfb|普通容器操作]]。
 - 关联容器不支持顺序容器的位置相关的操作，例如`push_front`或`push_back`。原因是关联容器中元素是根据关键字存储的，这些操作对关联容器没有意义。
-- 
+- 除了与顺序容器相同的操作之外，关联容器还支持一些顺序容器不支持的操作和类型别名。此外无序容器还提供一些用来调整哈希性能的操作。
+- 关联容器的迭代器都是双向的.
 
+### 定义关联容器
+#### 初始化map和set
+在新标准下，我们也可以对关联容器进行值初始化：
+```c++
+map<strin,size_t> word_count;//空容器
+set<string> exclude={"1",'2'}
+map<string,string> autors={
+{"Joyce","James"},
+{"HHH","heiheihei"}
+};
+```
+- 当初始化一个`map`时，必须提供关键字类型和值类型。我们将每个关腱字一值对包围:
+```c++
+{key,value}
+```
+
+#### 初始化multimap或multiset
+map和set中，关键字必须是唯一的。容器`multimap`和`multiset`的**关键字可以重复。**
+```c++
+vector<int> ivec{1,1,2,2,3,3};
+//使用迭代器初始化
+set<int> iset(ivec.cbegin(),ivec.cend);//包含3个元素
+multiset<int> miset(ivec.cbegin(),ivec.cend);//包含六个元素
+```
+
+### 11.2.2 关键字类型的要求
+- 对于**无序容器**中关键字的要求，11.4
+- 对于**有序容器**——`map`、`multimap`、`set`、`multset`，关键字类型必须定义元素比较的方法。默认使用`<`
+
+#### 有序容器的关键字类型
+- 可以使用[[#10.3 定制操作|定制操作]]向算法提供一个自定义的比较操作，替换关键字上的`<`运算符。
+- 所提供的操作必须在关键字类型上定义一个**严格弱序**，即是“**小于等于**”。
+- 自定义比较操作的函数必须具备如下性质：
+	- 两个关键字**不能同时“小于等于**”对方。
+	- 比较传递性：如果k1“小于等于”k2，且k2“小于等于”k3，那么k1必须“小于等于”k3。
+	- “等价传递性”：如果存在两个关键字，任何一个都不“小于等于”另一个，那么我们称这两个关键字是“**等价**”的。如果k1“等价于”k2，且k2“等价于”k3，那么k1必须“等价于”k3。
+- 如果两个关键字是**等价的**（即，任何一个都不“小于等于”另一个），那么容器将它们视作相等来处理。
+>[!note]
+>在实际编程中，重要的是，如果一个类型定义了“行为正常”的`<`运算符，则它可以用作关键字类型。
+
+#### 使用关键字类型的比较函数
+- 为Sales_data定义一个函数，使其有一个**严格弱序**，并且提供比较运算符。
+```c++
+bool compareIsbn(const Sales_data &lhs,const Sales_data &rhs)
+{
+	return lhs.isbn()<rhs.isbn();
+}
+```
+
+- 使用定制操作，创建有序容器：必须提供两个类型：
+	- 关键字类型
+	- 比较操作类型——一种[[CPP#函数指针|函数指针]]类型。
+```c++
+//bookstore中多条记录可以有相同的ISBN
+//bookstore中的元素以ISBN的顺序进行排列
+multiset<Sa1es_data,decltype(compareIsbn)*> bookstore(compareIsbn)；
+```
+>使用`decltype`来指出自定义操作的类型，根据函数类型生成函数指针。
+>用`compareIsbn`来初始化`bookstore`对象，这表示当我们向`bookstore`通过调用`compareIsbn`来为这些**元素排序**。
+
+>[!note]
+>- 自定义比较操作必须提供严格**弱序**
+>- 对于没有`<`操作的类自定义类，在生成有序容器时就需要自定义比较操作
+>- 创建自定义比较操作的有序容器：`容器<类型,函数指针>`,，如果初始化时把比较操作函数作为参数进行初始化，那么创建额容器将按照这个操作进行排序。
+
+
+### 11.2.3 pair类型
+- `pair`的标准库类型：它定义在头文件utility中。
+- `pair`**作用**：用来生成特定类型的模板。
+- **创建**`pair`：
+	- 一个`pair`保存两个数据成员，当创建一个`pair`时，我们必须提供两个类型别名，两个类型不要求一样：
+
+- 默认初始化：
+```c++
+pair<string,string> annon;
+pair<string,size_t> word_count;
+pair<string,vector<int>> line;
+```
+>	`pair`的默认构造函数对数据成员进行**值初始化**。因此初始化之后anno是一个包含两个空`string`的`pair`
+
+- 提供初始化值：以下一个`pair`两个成员被初始化为对应的值
+```c++
+pair<string,string> author{"hello","C++"};
+```
+
+- `pair`的数据成员：
+	- `pair`的数据成员是`public`，分别命名为`first`和`second`
+```c++
+author.first=="hello";
+author.word=="C++";
+```
+
+- `pair`的操作：
+![[Pasted image 20230128162354.png]]
+
+#### 创建pair对象的函数
+- 创建一个返回一个`pair`的函数：
+```c++
+pair<string, int> process(vector<string> &v){
+	//处理v
+	if(!v.empty())
+		//不为空，返回一个由v中最后一个string机器大小组成的pair
+		return {v.back(),v.back.size()};//列表初始化
+	else
+		//构造一个空pair
+		return pair<string,int>()//隐式构造返回值
+}
+```
+
+## 11.3 关联容器操操作
+![[Pasted image 20230128162823.png]]
+![[Pasted image 20230128162837.png]]
+除了上表列出的类型，关联容器还定义了以下操作：
+![[Pasted image 20230128162928.png]]
+
+- 对于`set`类型：`key_type`和`value_type`是一样的。`set`中保存的就是关键字。
+- 对一个`map`类型：每个元素是`pair`对象，包含一个关键字和一个关联的值，由于关键字不能改变，所以`pair`的关键字部分是`const`的。
+- 可以使用作用域孕妇桉树提取一个类型的成员。例如：`map<string,int>::key_type`
+
+### 11.3.1 关联容器迭代器
+当解引用一个关联容器迭代器时，我们会得到一个类型为容器的`value_type`的值的引用。
+	- 对于`map`：`value_type`是一个`pair`类型。
+	- 对于`set`：`set`的迭代器是`const`的，虽然`set`类型同时定义了`iterator`和`const_iterator`类型，但两种类型都**只允许只读访问`set`中的元素。**
+
+```c++
+auto it = word_count.begin();
+it->first;//关键字，是const的不能改变
+it->second;//值，可以改变
+
+set<int> iset={1,2,3};
+set<int>::iterator set_it = iset.begin();
+*set_it ==1;//由于set中const是只读，所以不能赋值。
+```
+
+#### 遍历关联容器
+`map`和`set`类型都支持`begin`和`end`操作。
+```c++
+auto map_it = word_count.cbegin();
+while(map_it!=word_count.cend()){
+	cout<<map_it->first<<":"<map_it->second<<endl;
+	++map_it;//递增这代器，移动到下一个元素
+}
+```
+
+#### 关联容器和算法
+- 我们**通常不对关联容器使用泛型算法。**
+**关键字是`const`** 这一特性意味着不能将关联容器传递给修改或重排容器元素的算法。
+
+- 关联容器可**用于只读取元素的算法**。但是，很多这类算法都要搜索序列。由于关联容器中的元素不能通过它们的关键字进行（快速）查找，所以**对其使用泛型搜索算法几乎总是个坏主意**。
+
+- 在实际编程中，如果我们真要对一个关联容器使用算法，要么是将它当作一个源序列，要么当作一个目的位置。例如，可以用泛型`copy`算法将元素从一个关联容器拷贝到另一个序列。
+
+### 11.3.2 添加元素

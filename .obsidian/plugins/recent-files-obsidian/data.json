@@ -5,6 +5,22 @@
       "path": "技术笔记/CPP/CPP2.md"
     },
     {
+      "basename": "未命名",
+      "path": "T_Box/未命名.md"
+    },
+    {
+      "basename": "算法",
+      "path": "技术笔记/算法.md"
+    },
+    {
+      "basename": "delete",
+      "path": "Schedule/Diary/delete.md"
+    },
+    {
+      "basename": "CSAPP",
+      "path": "技术笔记/CSAPP.md"
+    },
+    {
       "basename": "每日计划模板",
       "path": "Template/每日计划模板.md"
     },
@@ -15,10 +31,6 @@
     {
       "basename": "hexo模板",
       "path": "Template/hexo模板.md"
-    },
-    {
-      "basename": "code",
-      "path": "技术笔记/code.md"
     },
     {
       "basename": "CPP",
@@ -35,10 +47,6 @@
     {
       "basename": "20230127_5",
       "path": "Schedule/Diary 1/20230127_5.md"
-    },
-    {
-      "basename": "CSAPP",
-      "path": "技术笔记/CSAPP.md"
     },
     {
       "basename": "Drawing 2023-01-26 23.23.06.excalidraw",
@@ -119,10 +127,6 @@
     {
       "basename": "2022-12-06",
       "path": "Diary/2022-12-06.md"
-    },
-    {
-      "basename": "算法",
-      "path": "技术笔记/算法.md"
     },
     {
       "basename": "Pasted image 20221211232419",

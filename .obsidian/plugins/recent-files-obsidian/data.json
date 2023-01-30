@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "算法",
+      "path": "技术笔记/算法.md"
+    },
+    {
       "basename": "CSAPP",
       "path": "技术笔记/CSAPP.md"
     },
@@ -11,10 +15,6 @@
     {
       "basename": "未命名",
       "path": "T_Box/未命名.md"
-    },
-    {
-      "basename": "算法",
-      "path": "技术笔记/算法.md"
     },
     {
       "basename": "delete",

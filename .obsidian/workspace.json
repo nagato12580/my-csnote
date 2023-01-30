@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技术笔记/CSAPP.md",
+                "file": "技术笔记/算法.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -96,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技术笔记/CSAPP.md"
+                "file": "技术笔记/算法.md"
               }
             }
           },
@@ -106,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技术笔记/CSAPP.md",
+                "file": "技术笔记/算法.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技术笔记/CSAPP.md",
+                "file": "技术笔记/算法.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -212,13 +212,13 @@
   },
   "active": "a83a492e79173f59",
   "lastOpenFiles": [
+    "技术笔记/CSAPP.md",
     "技术笔记/CPP/CPP2.md",
     "技术笔记/CPP/CPP.md",
     "T_Box/未命名.md",
     "技术笔记/算法.md",
     "技术笔记/code.md",
     "Schedule/Diary/delete.md",
-    "技术笔记/CSAPP.md",
     "Template/每日计划模板.md",
     "Template/周记模板.md",
     "Template/hexo模板.md"

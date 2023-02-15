@@ -5,12 +5,28 @@
       "path": "技术笔记/算法.md"
     },
     {
-      "basename": "CSAPP",
-      "path": "技术笔记/CSAPP.md"
+      "basename": "CPP",
+      "path": "技术笔记/CPP/CPP.md"
     },
     {
       "basename": "CPP2",
       "path": "技术笔记/CPP/CPP2.md"
+    },
+    {
+      "basename": "算法题模板",
+      "path": "Template/算法题模板.md"
+    },
+    {
+      "basename": "作文模板",
+      "path": "技术笔记/作文模板.md"
+    },
+    {
+      "basename": "侯捷C++",
+      "path": "T_Box/侯捷C++.md"
+    },
+    {
+      "basename": "CSAPP",
+      "path": "技术笔记/CSAPP.md"
     },
     {
       "basename": "未命名",
@@ -31,10 +47,6 @@
     {
       "basename": "hexo模板",
       "path": "Template/hexo模板.md"
-    },
-    {
-      "basename": "CPP",
-      "path": "技术笔记/CPP/CPP.md"
     },
     {
       "basename": "未命名",

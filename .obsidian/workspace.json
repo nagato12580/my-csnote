@@ -4,46 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "56d17132b5fe9cc0",
+        "id": "f4126150c4845055",
         "type": "tabs",
         "children": [
           {
-            "id": "ddc29840cae5b448",
+            "id": "32efaec8756c5aa6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "技术笔记/算法.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "dddca9312cec4d7e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "技术笔记/算法.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "277efc87b5c84a8f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Template/算法题模板.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -120,9 +89,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "技术笔记/算法.md"
-              }
+              "state": {}
             }
           },
           {
@@ -131,7 +98,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技术笔记/算法.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -148,7 +114,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技术笔记/算法.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -221,11 +186,11 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "canvas:新建白板": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "templater-obsidian:Templater": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
-      "canvas:Create new canvas": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
@@ -235,17 +200,17 @@
       "obsidian-memos:Memos": false
     }
   },
-  "active": "5c72b2632107b410",
+  "active": "a83a492e79173f59",
   "lastOpenFiles": [
-    "技术笔记/CPP/CPP.md",
-    "技术笔记/CPP/CPP2.md",
+    "技术笔记/CSAPP.md",
     "技术笔记/算法.md",
-    "Template/算法题模板.md",
+    "T_Box/attachment/Pasted image 20230223104321.png",
     "技术笔记/作文模板.md",
     "T_Box/侯捷C++.md",
-    "技术笔记/CSAPP.md",
-    "T_Box/attachment/Pasted image 20230201174823.png",
-    "T_Box/attachment/Pasted image 20230130173900.png",
-    "T_Box/未命名.md"
+    "技术笔记/数据结构与算法分析.md",
+    "技术笔记/介词.md",
+    "技术笔记/CPP/CPP.md",
+    "技术笔记/CPP/CPP2.md",
+    "Template/算法题模板.md"
   ]
 }
